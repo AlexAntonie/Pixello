@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  min-height: 100vh;
+  padding: 50px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Day Theme */
+.day {
+  --bg-color: #e8e8e8;
+  --primary-color: #ff4d4d;
+  --accent-color: #ffcc00;
+  --text-color: #333333;
+}
+
+/* Night Theme */
+.night {
+  --bg-color: #130f40;
+  --primary-color: #4834d4;
+  --accent-color: #be2edd;
+  --text-color: #ffffff;
+}
+
+/* Pastel Green */
+.green {
+  --bg-color: #f1f9f5;
+  --primary-color: #2ecc71;
+  --accent-color: #27ae60;
+  --text-color: #2c3e50;
+}
+
+/* Pastel Blue */
+.blue {
+  --bg-color: #f0f5ff;
+  --primary-color: #3498db;
+  --accent-color: #2980b9;
+  --text-color: #2c3e50;
+}
+
+/* Pastel Pink */
+.pink {
+  --bg-color: #fff5f6;
+  --primary-color: #ff7979;
+  --accent-color: #eb4d4b;
+  --text-color: #2c3e50;
+}

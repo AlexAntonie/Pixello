@@ -1,0 +1,47 @@
+.theme-container {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.theme-trigger {
+  display: flex;
+  align-items: center;
+  background: var(--accent-color);
+  color: var(--bg-color);
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  width: 40px;
+  transition: width 0.5s ease-in-out;
+}
+
+.theme-trigger:hover {
+  width: 250px; 
+}
+
+.theme-options {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.theme-trigger:hover .theme-options {
+  opacity: 1;
+}
+
+.theme-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: transform 0.2s;
+}
+
+.theme-circle:hover {
+  transform: scale(1.3);
+}
