@@ -1,5 +1,5 @@
 import React from "react";
-import "./Styles/ThemeSwitcher.css";
+import "../Styles/ThemeSwitcher.css";
 
 function ThemeSwitcher({ setTheme }) {
   const themes = [
@@ -9,6 +9,12 @@ function ThemeSwitcher({ setTheme }) {
     { name: "blue", color: "#70a1ff" },
     { name: "pink", color: "#ffafbd" },
   ];
+
+
+  const handleThemeChange = (themeName) => {
+    setTheme(themeName);
+    localStorage.setItem("pixello_theme", themeName);
+  };
 
   return (
     <div className="theme-container">
@@ -20,7 +26,7 @@ function ThemeSwitcher({ setTheme }) {
               key={t.name}
               className="theme-circle"
               style={{ backgroundColor: t.color }}
-              onClick={() => setTheme(t.name)}
+              onClick={() => handleThemeChange(t.name)} 
               title={t.name}
             />
           ))}

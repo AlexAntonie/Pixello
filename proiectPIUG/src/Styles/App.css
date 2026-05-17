@@ -9,9 +9,60 @@ html, body {
   width: 100%;
 }
 
+.global-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--primary-color);
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  padding: 0 40px;
+  gap: 12px;
+  z-index: 9999; 
+}
+
+.global-nav button {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 2px solid transparent;
+  padding: 6px 18px;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.global-nav button:hover {
+  background-color: var(--primary-color);
+  color: #ffffff; 
+  transform: translateY(-1px);
+}
+
+
+.global-nav button:active {
+  transform: translateY(1px);
+}
+
+.global-nav button.active-nav {
+  background-color: var(--accent-color);
+  color: #000000; 
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
 .App {
   min-height: 100vh;
-  padding: 50px;
+  padding: 90px 40px 40px 40px; /* Increased top padding from 50px to 90px to push content below the 60px nav */
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.2s, color 0.2s;

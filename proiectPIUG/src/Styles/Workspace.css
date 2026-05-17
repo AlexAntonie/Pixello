@@ -1,4 +1,4 @@
-/* Workspace.css */
+
 
 #workspace {
     position: fixed;
@@ -14,7 +14,7 @@
 
 .menu-bar {
     position: absolute;
-    top: 20px;
+    top: 70px;
     left: 20px;
     display: flex;
     flex-direction: row;
@@ -24,7 +24,7 @@
 
 .middle-menu{
     position:absolute;
-    top:20px;
+    top:70px;
     left: 50%;
     transform:translateX(-50%);
     display:flex;
@@ -42,6 +42,13 @@
     border-radius: 4px;
     text-align: left;
     transition: transform 0.2s;
+}
+
+.tool-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none !important;
+    background-color: #555 !important;
 }
 
 .tool-btn:hover{
@@ -72,12 +79,16 @@
 
 .sidebar-left {
     position: absolute;
-    left: 40px;
+    left: 20px;
     top: 50%;
     transform:translateY(-50%);
-    width: 112px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 114px;         
+    box-sizing: border-box;
 }
-
 
 .tool-btn.active {
     background-color: var(--accent-color);
@@ -87,4 +98,121 @@
 
 .tool-btn.active:hover {
     transform: scale(1.06);
+}
+
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.canvas-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.canvas-controls-bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    z-index: 100;
+}
+
+.tool-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-color) !important;
+    outline: none !important;
+}
+
+
+.system-toaster {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 24px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    z-index: 9999;
+    animation: toastSlideIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.system-toaster.success {
+    background-color: #2ecc71;
+    border-left: 6px solid #27ae60;
+}
+
+
+.system-toaster.error {
+    background-color: #ff4d4d;
+    border-left: 6px solid #c0392b;
+}
+
+.toast-icon {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+.toast-text {
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes toastSlideIn {
+    from {
+        transform: translateY(40px) scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+
+.add-color-btn {
+    width: 100%;
+    height: 36px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.add-color-btn:hover {
+    background-color: var(--accent-color);
+    color: #000000;
+}
+
+.add-color-btn:active {
+    transform: scale(0.96);
 }

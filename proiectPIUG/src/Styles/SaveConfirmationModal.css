@@ -1,0 +1,106 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11000; /* Above everything, including toasters */
+    animation: modalFadeIn 0.2s ease-out;
+}
+
+.modal-container {
+    background-color: var(--bg-color, #ffffff);
+    color: var(--text-color, #000000);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 30px;
+    width: 380px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    animation: modalScaleUp 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.modal-icon {
+    font-size: 1.5rem;
+}
+
+.modal-message {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.modal-actions-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-btn {
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+.modal-btn:hover {
+    transform: scale(1.02);
+}
+
+.modal-btn.save-exit {
+    background-color: #2ecc71;
+    color: #ffffff;
+}
+.modal-btn.save-exit:hover {
+    background-color: #27ae60;
+}
+
+.modal-btn.discard-exit {
+    background-color: #ff4d4d;
+    color: #ffffff;
+}
+.modal-btn.discard-exit:hover {
+    background-color: #c0392b;
+}
+
+.modal-btn.cancel {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+}
+.modal-btn.cancel:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalScaleUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

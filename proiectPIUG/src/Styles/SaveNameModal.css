@@ -1,0 +1,96 @@
+.save-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11000; /* Stays above general page structures */
+}
+
+.save-modal-content {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 2px solid var(--primary-color);
+  padding: 24px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  animation: modalPopIn 0.15s ease-out;
+}
+
+.save-modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+.save-modal-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--text-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+}
+
+.save-modal-input:focus {
+  outline: 2px solid var(--accent-color);
+}
+
+.save-modal-input.input-error {
+  border-color: #ff4d4d;
+  outline: 1px solid #ff4d4d;
+}
+
+.save-modal-error-msg {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  margin: 8px 0 0 0;
+}
+
+.save-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.save-modal-actions button {
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+
+.save-btn-cancel {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color) !important;
+}
+
+.save-btn-cancel:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.save-btn-confirm {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.save-btn-confirm:hover {
+  filter: brightness(1.1);
+}
+
+@keyframes modalPopIn {
+  from { transform: scale(0.96); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
