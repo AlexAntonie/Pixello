@@ -35,7 +35,7 @@ function HelpModal() {
                 You can set the size to any values between 1 and 32 (inclusively), and it does not have to be square.
             </p>
             <p>            -The Canvas page: Can be accessed by setting your canvas size and clicking the "Draw!" button
-                on the main page. You MUST hit the exit button before closing the page in order for your drawing to be saved!
+                on the main page. You MUST hit the save button before closing the page in order for your drawing to be saved!
             </p>
             <p>             There are four tools at your disposal in the canvas tab - Pencil, Eraser, Color Picker, and bucket.
                 They each have their associated hotkey next to them. Under the drawing canvas, you can find the undo and redo button

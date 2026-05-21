@@ -94,6 +94,7 @@ export default function Config({
                         <button onClick={handleValidationAndStart} className="draw-button">
                             DRAW!
                         </button>
+                        <p className = "separator">max 32x32</p>
                     </div>
                 </div>
             </div>

@@ -5,47 +5,55 @@
 }
 
 #settings-page {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 40px 0;
+    position: fixed;
+    top: 70px; 
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 70px);
+    overflow-y: auto; 
+    padding: 40px;
+    background-color: var(--bg-color);
     color: var(--text-color);
+    font-family: inherit;
     display: flex;
     flex-direction: column;
-    gap: 70px;
+    gap: 50px; 
 }
 
 #settings-page h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--primary-color);
+    margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: -1px;
+    font-weight: 800;
     border-bottom: 3px solid var(--accent-color);
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    font-weight: 900;
+    display: inline-block;
+    align-self: flex-start;
+    padding-bottom: 5px;
 }
 
 .settings-section {
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 30px; 
 }
 
 .settings-section h3 {
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 1.3rem;
     color: var(--text-color);
-    opacity: 0.9;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
 }
 
 .theme-selection-row {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
-    gap: 20px;
-    padding: 10px 0 40px 0;
+    gap: 30px; 
+    padding-bottom: 40px;
 }
 
 .theme-pick-btn {
@@ -56,40 +64,40 @@
     height: 140px;
     border-radius: 50%;
     font-weight: 800;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
+    font-size: 1.2rem; 
+    letter-spacing: -0.5px;
     cursor: pointer;
     position: relative;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, outline 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, outline 0.2s ease;
 }
 
 .theme-pick-btn[title="day"] {
     background-color: #ff4d4d !important;
-    border: 5px solid #ffcc00 !important;
+    border: 3px solid #ffcc00 !important; 
     color: #333333 !important;
 }
 
 .theme-pick-btn[title="night"] {
     background-color: #4834d4 !important;
-    border: 5px solid #be2edd !important;
+    border: 3px solid #be2edd !important;
     color: #ffffff !important;
 }
 
 .theme-pick-btn[title="green"] {
     background-color: #2ecc71 !important;
-    border: 5px solid #27ae60 !important;
+    border: 3px solid #27ae60 !important;
     color: #2c3e50 !important;
 }
 
 .theme-pick-btn[title="blue"] {
     background-color: #3498db !important;
-    border: 5px solid #2980b9 !important;
+    border: 3px solid #2980b9 !important;
     color: #2c3e50 !important;
 }
 
 .theme-pick-btn[title="pink"] {
     background-color: #ff7979 !important;
-    border: 5px solid #eb4d4b !important;
+    border: 3px solid #eb4d4b !important;
     color: #2c3e50 !important;
 }
 
@@ -100,24 +108,26 @@
     left: 50%;
     transform: translateX(-50%);
     color: var(--text-color);
-    font-size: 1rem;
+    font-size: 0.95rem; 
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     pointer-events: none;
-    opacity: 0.8;
+    opacity: 0.7; 
 }
 
 .theme-pick-btn.active-theme {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px var(--accent-color);
+    transform: scale(1.03); 
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 10px 20px #2121212f; 
     outline: 3px solid var(--text-color);
     outline-offset: 6px;
 }
 
 .theme-pick-btn:hover {
-    transform: scale(1.06) translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.03) translateY(-4px); 
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 10px 20px #2121212f;
 }
 
 .theme-pick-btn.active-theme::after {
@@ -129,45 +139,45 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.03);
-    padding: 22px 30px;
-    border-left: 5px solid var(--primary-color);
-    border-radius: 0 6px 6px 0;
-    transition: background-color 0.2s ease;
+    background-color: rgba(0, 0, 0, 0.15); 
+    padding: 20px 30px;
+    border: 3px solid var(--primary-color); 
+    border-radius: 6px; 
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .keybind-row:hover {
-    background-color: rgba(255, 255, 255, 0.06);
+    transform: scale(1.01) translateY(-2px); 
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 20px #2121212f;
 }
 
 .keybind-row span {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .keybind-row button {
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: var(--bg-color); 
     border: none;
     padding: 12px 28px;
-    font-size: 1.1rem;
-    font-weight: 800;
-    border-radius: 4px;
+    font-size: 1.2rem; 
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 6px; 
     cursor: pointer;
     min-width: 180px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s, transform 0.1s;
 }
 
 .keybind-row button:hover {
     background-color: var(--accent-color);
     color: #000000;
-    transform: scale(1.02);
 }
-
-
 
 .hidden-key-input {
     position: absolute;
@@ -178,16 +188,17 @@
 }
 
 .keybind-row.static-hotkey button {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
     color: var(--text-color);
-    border: 1px dashed var(--primary-color);
+    border: 2px dashed var(--primary-color);
     cursor: not-allowed;
-    opacity: 0.7;
+    opacity: 0.5; 
     box-shadow: none;
+    transform: none;
 }
 
 .keybind-row.static-hotkey button:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
     color: var(--text-color);
     transform: none;
 }
@@ -204,20 +215,19 @@
     color: #ffffff;
     border: none;
     padding: 10px 24px;
-    font-size: 1.1rem;
-    font-weight: 800;
-    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 6px;
     cursor: pointer;
     min-width: 160px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s, transform 0.1s;
 }
 
 .bind-btn:hover:not(:disabled) {
     background-color: var(--accent-color);
     color: #000000;
-    transform: scale(1.02);
 }
 
 .bind-btn:focus {
@@ -225,12 +235,12 @@
 }
 
 .reset-btn {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.15);
     color: var(--text-color);
-    border: 2px solid var(--primary-color);
-    border-radius: 4px;
-    width: 42px;
-    height: 42px;
+    border: 3px solid var(--primary-color);
+    border-radius: 6px;
+    width: 44px; 
+    height: 44px;
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
@@ -242,15 +252,14 @@
 
 .reset-btn:hover {
     background-color: var(--primary-color);
-    color: #ffffff;
-    transform: scale(1.05);
+    color: var(--bg-color);
 }
 
 .keybind-row.static-hotkey .bind-btn {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
     color: var(--text-color);
-    border: 1px dashed var(--primary-color);
+    border: 2px dashed var(--primary-color);
     cursor: not-allowed;
-    opacity: 0.7;
+    opacity: 0.5;
     box-shadow: none;
 }

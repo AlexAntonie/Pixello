@@ -1,4 +1,4 @@
-/* Floating Action Button (Bottom Left) */
+
 .help-trigger-btn {
   position: fixed;
   bottom: 20px;
@@ -7,13 +7,13 @@
   height: 45px;
   border-radius: 50%;
   background-color: var(--accent-color);
-  color: var(--bg-color); /* assuming text contrast against accent */
+  color: var(--bg-color); 
   border: none;
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 9999; /* Keeps it on top of all pages */
+  z-index: 9999; 
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
@@ -22,7 +22,6 @@
   filter: brightness(1.1);
 }
 
-/* Modal Layout */
 .help-modal-overlay {
   position: fixed;
   top: 0;
@@ -33,7 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000; /* Higher than the trigger button */
+  z-index: 10000; 
 }
 
 .help-modal-content {
@@ -49,7 +48,7 @@
   animation: fadeIn 0.2s ease-out;
 }
 
-/* Close Button (Top Right) */
+
 .help-modal-close {
   position: absolute;
   top: 10px;
